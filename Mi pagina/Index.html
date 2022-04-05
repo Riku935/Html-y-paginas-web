@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="C:\xampp\htdocs\Mi pagina\css\Estilo1.css">
+  <link rel="stylesheet" href="css/Estilo1.css">
 <h1 style="background-color:rgb(255, 167, 36)">Un poco de historia de Resident Evil</h1>
 <p> 
     <img src="https://cloudfront-us-east-1.images.arcpublishing.com/copesa/VZRCMTP66JBVVJRLH3HK4NZ6SE.jpg" width="500" height="350" align="left">Biohazard, rebautizado en Estados Unidos y Europa como Resident Evil es una serie de Videojuegos de terror y una franquicia de medios, entre los que se incluyen manga, novelas, películas y coleccionables como figuras de acción, guías de estrategia y otras publicaciones. Desarrollados por Capcom y creados por Shinji Mikami la mayoría, al año 2014, se han vendido 61 millones de copias de los videojuegos en todo el mundo.
@@ -139,12 +139,15 @@ function showPosition(position) {
 <input id="numbSuma">
 <button type="button" onclick="mySuma()">Submit</button> <br>
 
-<script src="C:\xampp\htdocs\Mi pagina\js\Script1.js"></script>
+<script src="js/Script1.js"></script>
 
-<form>
-  <input type=" text" name="nomest" id="nomest" placeholder="Pon tu nombre" size="35">
-  <input type=" text" name="celu" id="celest" placeholder="Pon tu celular" size="35">
-  <button type="button" onclick="captura()">Capturar</button>
+<h2>Formulario utilizando php</h2>
+
+<form action = "php/Formulario.php" method="post">
+  Nombre :<input type="text" name="nombre"/>
+  Edad: <input type="text" name="edad"/>
+  <input type="submit" value="dame click"/>
+
 </form>
 </body>
 

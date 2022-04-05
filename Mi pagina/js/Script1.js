@@ -74,20 +74,20 @@ function myMove() {
   }
 
   function captura (){
-    var nombre = document.getElementById("nomest").value;
+    var nombre = document.getElementById("nombre1").value;
     var celuest = document.getElementById("celest").value;
     if(nombre == ""){
       alert("El nombre tienes que ponerlo");
-      document.getElementById("nomest").focus();
+      document.getElementById("nombre1").focus();
     }
     else{
       if(celuest == ""){
         alert("El nombre tienes que ponerlo");
-        document.getElementById("nomest").focus();
+        document.getElementById("nombre1").focus();
       }
     else{
       console.log(nombre + "" + celuest);
-      document.getElementById("nomest").value = "";
+      document.getElementById("nombre1").value = "";
       document.getElementById("celest").value = "";
     }
   }
