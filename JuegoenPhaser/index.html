@@ -2,8 +2,9 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
-    <title>Mi SpaceInvaders</title>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <title>Mi SpaceInvaders</title> 
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
     <style type="text/css">
         body {
             margin: 0;
@@ -11,79 +12,6 @@
     </style>
 </head>
 <body>
-
-<script type="text/javascript">
-
-    var config = {
-        type: Phaser.AUTO,
-        width: 1920,
-        height: 970,
-        physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: false
-        }
-    },
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
-        }
-    };
-
-    var game = new Phaser.Game(config);
-
-    function preload ()
-    {
-        this.load.image('Fondo', 'Assets/bg2.jpg');
-        this.load.image('nave', 'Assets/nave3.png');
-        this.load.image('ground', 'Assets/platform.png');
-    }
-
-    function create ()
-    {
-        //Fondo
-        this.add.image(0, 0, 'Fondo').setOrigin(0, 0);
-
-        //Suelo
-        platforms = this.physics.add.staticGroup();
-        platforms.create(1000, 1030, 'ground').setScale(5).refreshBody();
-
-        //Player
-        player = this.physics.add.sprite(900, 820, 'nave');
-        player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
-
-        //Colision con la plataforma
-        this.physics.add.collider(player, platforms);
-
-        //Input teclado
-        cursors = this.input.keyboard.createCursorKeys();
-
-        //Score 
-        this.add.text(100, 100, 'Vidas:', { color: '#FFFBFB',  fontSize: 40 });
-    }
-
-    function update ()
-    {
-        //Movimiento Jugador
-        if (cursors.left.isDown)
-        {
-             player.setVelocityX(-200);
-        }
-        else if (cursors.right.isDown)
-        {
-            player.setVelocityX(200);
-        }
-        else
-        {
-            player.setVelocityX(0);
-        }
-
-    }
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
