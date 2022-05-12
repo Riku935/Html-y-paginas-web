@@ -5,12 +5,12 @@ class Invader_Shot extends Phaser.GameObjects.Sprite{
 		scene.add.existing(this);
 	}
 	update(){
-		enemyBullet = 1;
+		bulletEnemigo = 1;
 		this.y += 5;
 		if(this.y > 450)
     { 
 			this.destroy(); 
-			enemyBullet = 0; 
+			bulletEnemigo = 0; 
 		}
 		var DistImpactoPlayer = Phaser.Math.Distance.Between(player.x, player.y, this.x, this.y);
 		if(DistImpactoPlayer < 35)
@@ -19,12 +19,12 @@ class Invader_Shot extends Phaser.GameObjects.Sprite{
 			livesString.x=520;
 			playerVivo = 0;
 			this.destroy();
-			enemyBullet = 0;
+			bulletEnemigo = 0;
 		}
 		if(contadorVictoria > 0)
     { 
 				this.destroy();
-				enemyBullet = 0;
+				bulletEnemigo = 0;
 		}
 	}
 }
