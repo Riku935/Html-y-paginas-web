@@ -42,6 +42,7 @@ var limiteBai = 200;
 var playerPuedeMover = 1;
 var cantEnemigos = 0;
 var contadorVictoria = 0;
+var enemyBullet
 
 
 
