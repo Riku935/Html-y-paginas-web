@@ -320,7 +320,37 @@ function update ()
 		}
 	}
 	
-	
+	//Reinicia nuestros valores para la condicion de victoria
+	if(contadorVictoria == 120)
+	{
+		player.x = 400;
+		cuadro.x = 400;
+		cuadro.y = 100;
+		cuadroX = 400;
+		cuadroY = 100;
+		cuadroVel = 1;
+		playerPuedeMoverse = 1;
+		contadorVictoria = 0;
+		cantEnemigos = 40;
+		array = [
+			[1,1,1,1,1,1,1,1,1,1],
+			[1,1,1,1,1,1,1,1,1,1],
+			[1,1,1,1,1,1,1,1,1,1],
+			[1,1,1,1,1,1,1,1,1,1]
+		];
+		var OrigemX = cuadro.x-225;
+		var OrigemY = cuadro.y;
+		for(i=0; i<=9; i++){
+			for(j=0; j<=3; j++)
+			{
+				var sprite = '';
+				if(j==0){ sprite = 'Invader1'; }
+				if(j==1){ sprite = 'Invader2'; }
+				if(j>=2){ sprite = 'Invader3'; }
+				this.Group_Enemy.add(enemy = new Enemy(this, OrigemX+50*i, OrigemY+50*j, sprite));
+			}
+		}
+	}
 	
 	//Condicion para finalizar juego
 	if(limiteBai+cuadro.y>410)
