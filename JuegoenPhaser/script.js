@@ -71,6 +71,8 @@ function create ()
     //Enemies
 
     //Enemigos
+    this.Group_Enemy_Shot = this.add.group({runChildUpdate:true});
+	this.Group_Escudo = this.add.group({runChildUpdate:true});
     this.Group_Enemy = this.add.group({runChildUpdate:true})
     var origenX = 175;
     var origenY = 50;
@@ -85,7 +87,23 @@ function create ()
             this.Group_Enemy.add(enemy = new Enemy(this, origenX + 50 * i, origenY + 50 * j, sprite));
         }
     }
-
+    //Escudos
+    var LayoutEscudos = [
+		[0,0,1,0,0],
+		[0,1,1,1,0],
+		[1,1,1,1,1]
+	];
+	for(i=0; i<=2; i++){
+		for(j=0; j<=4; j++){
+			for(k=-1; k<=1; k++){
+				if(LayoutEscudos[i][j] == 1){ 
+				this.Group_Escudo.add(escudo = 
+					new Escudo(this, k*250+360+20*j, 330+20*i, 'Escudo')); 
+				}
+			}
+		}
+	}
+    //Inicia el movimiento con cuadro
     cuadro = this.add.sprite (400, 50, 'cuadro').setOrigin(0.5,0.5);
 
     //Texto    
@@ -100,13 +118,7 @@ function create ()
 
 function update (time, delta)
 {
-    //Debug
-    strDebug.setText(
-        array[0] + '\n' +
-        array[1] + '\n' +
-        array[2] + '\n' +
-        array[3] + '\n' 
-    )
+    //Limita el movimiento del grupo de enemigos
     cantEnemigos = 0;
     var buscandoEsquina = 1;
     limiteEsq = 0;
@@ -174,7 +186,7 @@ function update (time, delta)
 
 
 
-
+    //Inicia el movimiento del jugador
     if (playerPuedeMover == 1)
     {
         //Controles horizontales del jugador
