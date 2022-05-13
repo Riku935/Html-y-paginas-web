@@ -39,9 +39,9 @@ class Enemy extends Phaser.GameObjects.Sprite{
 			bullet1 = -1; 
 			bulletQuantity--;
 			cuadroVel += 0.225;
-			if(enemyArrayY == 0) { score += 30; scoreString .x=120; }
-			if(enemyArrayY == 1) { score += 20; scoreString .x=120; }
-			if(enemyArrayY >= 2) { score += 10; scoreString .x=120; }			
+			if(enemyArrayY == 0) { score += 30;  }
+			if(enemyArrayY == 1) { score += 20;  }
+			if(enemyArrayY >= 2) { score += 10;  }			
 		}
 		if(distBala2 < 25){ 
 			this.destroy(); 
@@ -51,9 +51,9 @@ class Enemy extends Phaser.GameObjects.Sprite{
 			bulletQuantity--;
 			cuadroVel += 0.225;
 			//Suma distintos valores al score dependiendo el enemigo al que se de
-			if(enemyArrayY == 0) { score += 30; scoreString .x=120; }
-			if(enemyArrayY == 1) { score += 20; scoreString .x=120; }
-			if(enemyArrayY >= 2) { score += 10; scoreString .x=120; }			
+			if(enemyArrayY == 0) { score += 30;  }
+			if(enemyArrayY == 1) { score += 20;  }
+			if(enemyArrayY >= 2) { score += 10;  }			
 		}
 	}
 }

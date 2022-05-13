@@ -16,7 +16,6 @@ class Invader_Shot extends Phaser.GameObjects.Sprite{
 		if(DistImpactoPlayer < 35)
     {
 			lives--;
-			livesString.x=520;
 			playerVivo = 0;
 			this.destroy();
 			bulletEnemigo = 0;

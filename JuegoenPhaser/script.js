@@ -1,7 +1,7 @@
 var config = {
     type: Phaser.AUTO,
     width: 800,
-    height: 600,
+    height: 450,
     physics: {
     default: 'arcade',
     arcade: {
@@ -79,7 +79,7 @@ function create ()
 	
 	//Enemigos
 	this.Group_Enemy = this.add.group({runChildUpdate:true});	
-	this.Group_Enemy_Shot = this.add.group({runChildUpdate:true});
+	this.Group_Invader_Shot = this.add.group({runChildUpdate:true});
 	this.Group_Escudo = this.add.group({runChildUpdate:true});
 	var OrigemX = 175;
 	var OrigemY =  50;
@@ -227,7 +227,7 @@ function update ()
 		if(Disparo_Columna == 9){ Disparo_Columna = cuadro.x+200+25; }
 		if( intervaloTirosEnemigos == 0 && contadorDerrota == 0 ){
 			this.Group_Enemy.add(enemy_shot = 
-				new Enemy_Shot(this, Disparo_Columna, Disparo_Linea, 'EnemyBullet'));
+				new Invader_Shot(this, Disparo_Columna, Disparo_Linea, 'EnemyBullet'));
 		}
 	}
 	
@@ -364,7 +364,6 @@ function update ()
 	{
 		if(lives == 0){
 		obj_gameover = this.add.image(400, 225, 'GameOver').setOrigin(0.5, 0.5);
-		obj_gameover.alpha = 0;
 		}else{
 			playerVivo = 1;
 			playerPuedeMoverse = 1; 
